@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// InteviewBit
+/// InteviewBit
 vector<int> prevSmaller(vector<int> &A)
 {
 
