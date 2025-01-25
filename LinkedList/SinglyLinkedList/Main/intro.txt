@@ -1,0 +1,7 @@
+in array the elements are stored in a contiguous manner and are stored in heap memory in computer
+
+But in array u could neither increase the size of the array nor decrease the size of the array in such a case comes linkedList.
+
+linkedList stores element in non contiguous manner and can be expanded or shrunk at any point of time,then how does it stores elements in heap it stores the next memory location(next) and create a link and if there is no linkage therafter then it would be pointing to null pointer.
+
+The starting point of the LL is called as the head of the LL and the last is called the tail of the linked list.
