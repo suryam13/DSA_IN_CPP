@@ -16,4 +16,4 @@ The repository is organized into folders based on the topics of DSA. Each folder
 | Linked Lists         | ✅              | ✅              |
 | Trees                | 🔄 In Progress  | ❌              |
 | Graphs               | ❌ Not Started  | ❌              |
-| Dynamic Programming  | ✅              | ✅              |
+| Dynamic Programming  | ✅              | ✅              
