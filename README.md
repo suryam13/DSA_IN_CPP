@@ -1,6 +1,6 @@
 # Data Structures and Algorithms in C++ 🚀
 
-Welcome to my **Data Structures and Algorithms (DSA)** repository! This repository contains my solutions, implementations, and notes for various DSA problems and concepts using **C++**. It is designed to help anyone looking to improve their problem-solving skills and understanding of algorithms.
+Welcome to my **Data Structures and Algorithms (DSA)** repository! This repository contains my solutions, implementations, and notes for various DSA problems and concepts using **C++**. 
 
 ---
 
@@ -10,10 +10,20 @@ The repository is organized into folders based on the topics of DSA. Each folder
 
 ## 📈 Progress Tracker
 
-| Topic                | Problems Solved | Notes/Resources |
+| Topic                | Problems Solving|     Theory      |
 |----------------------|-----------------|-----------------|
-| Arrays               | ✅              | ✅              |
-| Linked Lists         | ✅              | ✅              |
-| Trees                | 🔄 In Progress  | ❌              |
-| Graphs               | ❌ Not Started  | ❌              |
-| Dynamic Programming  | ✅              | ✅              
+| Arrays               | ✅              | ✅             |
+| Searching & Sorting  | ✅              | ✅             |
+| Strings              | ✅              | ✅             |
+| Recursion            | ✅              | ✅             |
+| Linked List          | ✅              | ✅             |
+| Stack and Queues     | 🔄 In Progress  | ✅             |
+| Bit Manipulation     | ✅              | ✅             |
+| Trees                | ❌ Not Started  | ❌             |
+| Graphs               | ❌ Not Started  | ❌             |
+| Dynamic Programming  | ❌ Not Started  | ❌             |
+
+
+
+
+
