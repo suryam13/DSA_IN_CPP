@@ -8,3 +8,12 @@ Welcome to my **Data Structures and Algorithms (DSA)** repository! This reposito
 
 The repository is organized into folders based on the topics of DSA. Each folder contains C++ files and explanations for the respective topic.
 
+## 📈 Progress Tracker
+
+| Topic                | Problems Solved | Notes/Resources |
+|----------------------|-----------------|-----------------|
+| Arrays               | ✅              | ✅              |
+| Linked Lists         | ✅              | ✅              |
+| Trees                | 🔄 In Progress  | ❌              |
+| Graphs               | ❌ Not Started  | ❌              |
+| Dynamic Programming  | ✅              | ✅              |
