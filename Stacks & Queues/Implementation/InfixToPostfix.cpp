@@ -44,7 +44,7 @@ string infixToPostfix(string &s)
         else // means it is an operator
         {
             // if the precedence of curr is lower than top of stack then pop the tops of stack
-            // if equal precedence then also pop
+            // if equal precedence then also pop uptill the tos doesnt became lower precedence than the curr
             while (!st.empty() && priority(s[i]) <= priority(st.top()))
             {
                 ans.push_back(st.top());

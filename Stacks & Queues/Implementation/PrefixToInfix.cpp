@@ -4,6 +4,9 @@ string preToInfix(string pre_exp)
 {
 
     // pre->inf  *ab we want operand to come first
+    //*ab-->a*b so we have to go for operand first then have to start from back
+    //a would be top1 and b would be top2 and we have to do  top1 operator top2 along with ()
+
 
     stack<string> st;
 

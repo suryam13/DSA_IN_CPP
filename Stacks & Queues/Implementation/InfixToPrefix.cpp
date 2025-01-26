@@ -55,7 +55,7 @@ string convert(string &s)
                     st.pop();
                 }
             }
-            // if the precedence of curr is lower than top of stack then push if same then dont do anything as that is the case in this conversion
+            // if the precedence of curr is lower than top of stack then pop tos and if same then dont do anything as that is the case in this conversion
             while (!st.empty() && priority(s[i]) < priority(st.top()))
             {
                 ans.push_back(st.top());

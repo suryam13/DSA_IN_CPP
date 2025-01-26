@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+// ab*-->a*b then start from begining and do top2 operator top1 along with ()
 string postToInfix(string s)
 {
 
@@ -17,13 +19,13 @@ string postToInfix(string s)
 
         else // means an operator has come
         {
-            //eg ab* we traverse from start as we want operand first --> 
-            string s2 = st.top(); //b will come first 
+            // eg ab* we traverse from start as we want operand first -->
+            string top1 = st.top(); // b will come first
             st.pop();
-            string s1 = st.top();// then a and we want to make a * b
+            string top2 = st.top(); // then a and we want to make a * b
             st.pop();
 
-            string modified = '(' + s1 + s[i] + s2 + ')';
+            string modified = '(' + top2 + s[i] + top1 + ')';
             st.push(modified);
         }
     }
