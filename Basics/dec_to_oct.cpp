@@ -20,6 +20,23 @@ long long decimalToOctal(int x)
     }
     return ans;
 }
+
+long long decimalToOctal(int n)
+{
+
+    string ans;
+    while (n > 7)
+    {
+        int mod = n % 8;
+        char ch = '0' + mod;
+        ans.push_back(ch);
+        n = n / 8;
+    }
+    ans.push_back('0' + n);
+    reverse(ans.begin(), ans.end());
+
+    return stoll(ans);
+}
 int main()
 {
 

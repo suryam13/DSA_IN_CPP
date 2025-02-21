@@ -17,6 +17,20 @@ int bin(int n)
     return ans;
 }
 
+string decToBinary(int n) {
+    string ans;
+    while(n>1)  //mae sure it is greater than 1 that is it should be atleast 2
+    {
+        int mod=n%2;
+        char ch='0'+mod;
+        ans.push_back(ch);
+        n=n/2;
+    }
+    ans.push_back('0'+n); //pushing the last one
+    reverse(ans.begin(),ans.end());
+    return ans;
+}
+
 int main()
 {
     int n;
