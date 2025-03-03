@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// GFG
+/*
+ bool helper(vector<vector<int>>& adj,vector<bool> &visited,int u,int parent)
+    {
+
+        visited[u]=true;
+        //marked the current vertex as true
+
+        for(int &v:adj[u]) //iterating on possible edges
+        {
+            if(parent==v) //so dont go back as it would be marked but not a cycle
+            continue;
+
+            if(visited[v])
+            return true; //as this is a sign of cycle so return true;
+
+            //else make a call for next
+            if(helper(adj,visited,v,u)) //send the current u as the parent and if true
+            //means cycle detected
+            return true;
+        }
+
+        return false;
+
+
+    }
+    bool isCycle(vector<vector<int>>& adj) {
+
+        vector<bool> visited(adj.size(),false);
+
+        //since there can be a disconected graph in the space so we need to explore all
+        for(int i=0;i<adj.size();i++)
+        {
+
+            if(!visited[i] && helper(adj,visited,i,-1)) //i is the startion vertex and
+            //-1 is the parent since it is the first vertex
+            return true;
+
+        }
+
+        return false;
+
+
+    }
+*/
+int main()
+{
+
+    return 0;
+}
