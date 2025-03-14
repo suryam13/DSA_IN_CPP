@@ -11,55 +11,54 @@ suppose we have the relation
 
 In this problem 1 would be previously marked and also it wont be equal to parent which is 2 in the next for loop call for non visited ones, so it would return true for cycle but it is not,in undirected it wasnt a problem because in that the movement was possible for both the sides
 
-so we would have to keep a track of which elements are in continuos direction and if they meet again so a cycle,thats the purpose of using inRecursion so that it would keep a track of the ones involved int this call
+so we would have to keep a track of which elements are in continuous direction and if they meet again so a cycle,thats the purpose of using inRecursion so that it would keep a track of the ones involved int this call
 
 
 This problem cannot be solved using topo sort as in bfs it was working but wont work over here because it would still produce the answer even if cycle exists but the answer would be wrong
 
 So over here the standard inRecursion technique is used
 
-bool helper(vector<vector<int>>& adj,vector<bool> &visited,vector<bool> &inRecursion,int u)
+// Function to detect cycle in a directed graph.
+ bool helper(vector<vector<int>>& adj,vector<bool> &visited,vector<bool> &inRecursion,int u)
     {
-
+        
         visited[u]=true;
         inRecursion[u]=true;
-        //marked the current vertex as true
-
+        //marked the current vertex as visited
+        //marked the current vertex to be inRecursion
+        
         for(int &v:adj[u]) //iterating on possible edges
         {
-
-
-            if(visited[v]==false &&  helper(adj,visited,inRecursion,v))
-            return true;
-
+            
+            if(visited[v] && inRecursion[v]) 
+            return true; //as this is a sign of cycle so return true;
+            
             //else make a call for next
-            else if(inRecursion[v]) //means visited and inRecursion true;
+            if( helper(adj,visited,inRecursion,v))
             return true;
         }
-
+        
         inRecursion[u]=false;
-
+        
         return false;
-
-
     }
-
+    
     bool isCyclic(vector<vector<int>> &adj) {
-
-
+        
+          
         vector<bool> visited(adj.size(),false);
         vector<bool> inRecursion(adj.size(),false);
-
+     
+        
         //since there can be a disconected graph in the space so we need to explore all
         for(int i=0;i<adj.size();i++)
         {
-
-            if(!visited[i] && helper(adj,visited,inRecursion,i)) //i is the startion vertex and
-            //-1 is the parent since it is the first vertex
+            
+            if(!visited[i] && helper(adj,visited,inRecursion,i))
             return true;
-
+        
         }
-
+        
         return false;
     }
 
@@ -82,7 +81,7 @@ Another Approach : Mine
             if(dfs(adj,visited,st,v))
             return true;
 
-            st.erase(v);
+           // st.erase(v); //would work if i dont write this because it would be automatically handled by going till the end where st.erase(u) is used for the next set of call
         }
 
         st.erase(u);

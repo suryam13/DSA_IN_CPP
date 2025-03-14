@@ -1,12 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-
 //GFG
 /*
   void dfs(vector<vector<int>>& adj,int u,vector<bool>& visited,vector<int> &traversed)
     {
-        if(visited[u]) //means this vertex has been visisted
+        if(visited[u]) //means this vertex has been visisted, if we dont write this it still works as this case is been handled int the for loop itself
         return;
         
         //if not then mark 
@@ -19,15 +17,13 @@ using namespace std;
         
         for(auto &v:adj[u])
         {   
-            //checking here too because in furure recursive calls it could have been marked
+            //checking here because in future recursive calls could be made again even if its marked 
             if(!visited[v])
             dfs(adj,v,visited,traversed);
         }
     
     }
-    
-    
-    
+        
     vector<int> dfsOfGraph(vector<vector<int>>& adj) {
         
         
@@ -45,6 +41,5 @@ using namespace std;
 */
  int main()
 {
-    
     return 0;
 }

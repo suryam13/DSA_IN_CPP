@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 //GFG
-
 /*
   void bfs(vector<vector<int>> &adj,int u,vector<bool> &visited, vector<int> &ans)
     {
