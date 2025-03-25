@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//suppose u want to calculate the lcm of two numbers
+//use formaula x*y/gcd(x,y) 
 int method1(int num1, int num2)
 {
     int gcd = 0;

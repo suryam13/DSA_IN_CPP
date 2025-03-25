@@ -15,6 +15,7 @@ string customSortString(string order, string s)
     sort(s.begin(), s.end(), compare);
     return s;
 }
+//whatever is true 
 int main()
 {
 
