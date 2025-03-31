@@ -70,7 +70,7 @@ vector<bool> seive(int right)
         isPrime[0]=false;
         isPrime[1]=false;
 
-        for(int i=2;i*i<=right;i++) //O(N)
+        for(int i=2;i*i<=right;i++) 
         {
             if(isPrime[i]) //means prime as it is true
             {
@@ -83,6 +83,7 @@ vector<bool> seive(int right)
         }
         return isPrime;
     }
+
     vector<int> closestPrimes(int left, int right) {
 
         vector<bool> isPrime = seive(right); 
@@ -134,7 +135,7 @@ vector<bool> seive(int right)
             n(1/2+1/3+1/5)
             this is harmonic series on primes and its values grows very slowly even slower than log
             
-            n(log(log n))
+            O(n(log(log n)))
 
         */
     

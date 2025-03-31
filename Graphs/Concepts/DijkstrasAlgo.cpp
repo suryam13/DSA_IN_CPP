@@ -5,7 +5,7 @@ using namespace std;
 
 --> Dijkstras doesnt works with negative weights
 --> Dijkstra's algorithm works on both directed and undirected graphs.
---> It is used to give the minimum cost to go from source to specified destination
+--> It is used to give the minimum cost/shortest path to go from source to every node present in the graph
 
 STEPS :
 --> You would be having a source from where u would be told to calculate the minimum cost required to get from there to all the vertices

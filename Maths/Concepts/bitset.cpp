@@ -8,7 +8,7 @@ using namespace std;
 
     int num=10;
 
-    bin=bitset<8>(num).to_string();
+    bin=bitset<5>(num).to_string();
 
     cout<<bin;
     
