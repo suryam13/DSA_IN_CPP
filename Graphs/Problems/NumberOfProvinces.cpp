@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 //LC - 547
+//Just have to find the number of connected components in the graph.
 
 /*
 DFS
@@ -39,7 +40,8 @@ DFS
 */
 
 /*
-BFS
+BFS,doing all the operations in the given matrix itself and not using any extra space for adj list
+    
  int n;
     void bfs(vector<vector<int>>& isConnected,vector<bool> &visited,int u)
     {

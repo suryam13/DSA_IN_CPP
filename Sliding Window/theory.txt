@@ -1,0 +1,4 @@
+Whenever there comes a problem of count the number of subarray then it could be solved with the following ways:
+1.Prefix sum approach with map refer L.C. 930 
+2.Sliding window (standard)
+3.atmostK - atmost(k-1) (to find exactly k numbers) refer LC-992

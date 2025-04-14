@@ -2,6 +2,7 @@
 using namespace std;
 
 // GFG
+//In undirected graph u just have to make sure that if it comes again to a previously visited vertex then it is a cycle but make sure that it the edge is not going back to the parent vertex because suppose we have a graph like this a---b so if we go from a to b then we would also have an edge from b to a but since a is visited we would return a cycle but actually it is not a cycle because where b is going it is a parent of b 
 /*
  bool helper(vector<vector<int>>& adj,vector<bool> &visited,int u,int parent)
     {
@@ -35,14 +36,13 @@ using namespace std;
         for(int i=0;i<adj.size();i++)
         {
 
-            if(!visited[i] && helper(adj,visited,i,-1)) //i is the startion vertex and
+            if(!visited[i] && helper(adj,visited,i,-1)) //i is the starting vertex and
             //-1 is the parent since it is the first vertex
             return true;
 
         }
 
         return false;
-
 
     }
 */

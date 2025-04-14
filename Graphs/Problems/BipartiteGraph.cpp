@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//LC-785
+//LC-785 
+//If it is able to partition the graph into two parts or to color with two colors such that no adjacent vertices have the same color then it is bipartite graph.
+//If the graph has odd cycle then it is not bipartite graph
 //GFG
 //DFS
 bool checkBipartite(vector<vector<int>>& adj, vector<int> &color,int currColor,int u)

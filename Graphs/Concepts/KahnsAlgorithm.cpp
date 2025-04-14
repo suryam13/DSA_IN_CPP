@@ -5,7 +5,7 @@ using namespace std;
 //Toplogical Sorting Using kahns Algorithm by using BFS
 
 /*
-This uses the concept of inDegree,the vertex which has indegree as 0 can be considered to come before int he final ans as there is no vertex which comes before it 
+This uses the concept of inDegree,the vertex which has indegree as 0 can be considered to come before in the final ans as there is no vertex which comes before it 
 
 STEPS:
 1.Calculate the indegree by populating over the adj list

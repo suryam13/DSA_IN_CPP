@@ -4,7 +4,7 @@ using namespace std;
 /*
 
 What is Topo sort?
-Topo sort means we have to generate the answer in such a manner that if there is a connection/edge like 2-->3 so i the answer 2 should appear before 3 as firstly 2 will come then 3
+Topo sort means we have to generate the answer in such a manner that if there is a connection/edge like 2-->3 so in the answer 2 should appear before 3 as firstly 2 will come then 3
 
 NOTE:
 Toplogical Sort is applied only in directed graph as in undirected graph there is both the possibility 2 before 3 or 3 before 2,so it is unpredictible

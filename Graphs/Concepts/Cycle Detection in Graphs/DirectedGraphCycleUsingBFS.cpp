@@ -41,7 +41,7 @@ using namespace std;
             check_cnt++;
             for(auto& v:adj[u])
             {
-                //since the parent is been removed so the indegree would eb reduced by 1
+                //since the parent is been removed so the indegree would be reduced by 1
                 inDegree[v]--;
                 if(inDegree[v]==0) //push into the q
                 q.push(v);
@@ -49,6 +49,7 @@ using namespace std;
         }
         
         return check_cnt!=adj.size();
+        //if the count of vertices is not equal to the number of vertices in the graph then there is surely a cycle
         
     }
 */

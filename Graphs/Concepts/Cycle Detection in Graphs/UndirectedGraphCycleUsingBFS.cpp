@@ -4,8 +4,7 @@ using namespace std;
 //GFG
 /*
  // Function to detect cycle in an undirected graph.
-    
-    
+
     bool bfs(vector<vector<int>>& adj,vector<bool> &visited,int u)
     {
         queue<pair<int,int>> q; //vertex and its parent

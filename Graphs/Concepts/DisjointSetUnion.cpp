@@ -28,7 +28,7 @@ int find(int ele,vector<int> &parent)
 
 
     //if not then search who is the parent of parent[i] then recursively
-    return find(parent[i],parent)
+    return find(parent[ele],parent)
 }
 
 
@@ -50,7 +50,7 @@ void union(int x,int y,vector<int> &parent)
 }
 
 
-//The find a ction takes a long to as it has to go uptill the top in worst case so for that reason we have find operation using rank and path compression
+//The find action takes a long time as it has to go uptill the top in worst case so for that reason we have find operation using rank and path compression
 
 //optimized the find operation using path compression : we know that it would be traversed again and again at the top so why not when coming back assign all the nodes their topmost parent so that they can find directly next time without traversing entire path
 

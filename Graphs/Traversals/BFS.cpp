@@ -1,6 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 //GFG
+//BFS traversal of graph
+/*
+BFS is useful in shortest path finding in unweighted graph as we explore all the neighbours of a vertex before going to the next level of neighbours, so we can find the shortest path in unweighted graph. 
+
+
+*/
 /*
   void bfs(vector<vector<int>> &adj,int u,vector<bool> &visited, vector<int> &ans)
     {
