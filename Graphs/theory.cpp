@@ -1,5 +1,4 @@
 /*
-
 SHORTEST PATH INTUTIONS :
 
 -> If the graph is weighted or the cost of moving from one place to another takes uniform time then apply simple bfs which uses visited array and queue

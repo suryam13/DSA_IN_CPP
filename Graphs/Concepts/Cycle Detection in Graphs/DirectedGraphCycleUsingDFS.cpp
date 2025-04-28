@@ -5,9 +5,8 @@ using namespace std;
 
 suppose we have the graph like
 0->1<-2
-
 0 - 1
-1 -
+1 - no any edge
 2 - 1
 
 
