@@ -73,6 +73,72 @@ public:
         return 0;
     }
 };
+
+// Another approach
+/*
+vector<int> parent;
+vector<int> rank;
+
+int find(int el)
+{
+    if (parent[el] == el)
+        return el;
+
+    return parent[el] = find(parent[el]);
+}
+
+void Union(int el1, int el2)
+{
+    int find1 = find(el1);
+    int find2 = find(el2);
+
+    parent[find1] = find2;
+}
+bool isCycle(int V, vector<vector<int>> &edges)
+{
+    // detecting cycle using DSU
+    parent.resize(V);
+    rank.resize(V, 0);
+
+    for (int i = 0; i < V; i++)
+    {
+        parent[i] = i;
+        rank[i] = 0;
+    }
+
+    // making adj list
+    unordered_map<int, vector<int>> mapy;
+    set<pair<int, int>> st;
+    for (auto &edge : edges)
+    {
+        mapy[edge[0]].push_back(edge[1]);
+        mapy[edge[1]].push_back(edge[0]);
+    }
+
+    for (int u = 0; u < V; u++)
+    {
+        for (auto &v : mapy[u])
+        {
+            if (!st.count({v, u})) // means not a duplicate,can proceed to check
+            {
+                int parent1 = find(u);
+                int parent2 = find(v);
+
+                if (parent1 == parent2)
+                    return true;
+
+                else
+                {
+                    Union(u, v);
+                }
+
+                st.insert({u, v});
+            }
+        }
+    }
+    return false;
+}
+*/
 int main()
 {
 

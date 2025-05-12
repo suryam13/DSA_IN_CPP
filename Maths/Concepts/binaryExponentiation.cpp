@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//TC: O(log n) n is the power
 long long BinaryExpo(long long a, long long b)
 {
     if (b == 0)

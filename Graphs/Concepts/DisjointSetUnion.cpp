@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*
-DSU only works with undirected graph,becuase 
+DSU only works with undirected graph as it used for cycle detection and component making while in directed graph it only works for making weakly connected components and not strongly connected components and also not for cycle detection 
 
+FOR COMPONENT MAKING :
+Undirected,Directed(WCC) : DSU,BFS,DFS
+Directed(SCC) : BFS,DFS,Kosaraju
 
 CONCEPT OF DISJOINT SET OR UNION FIND
 works only in undirected graph and not in directed
@@ -14,8 +17,10 @@ DSU gives us two operations :
 1. Combine two given sets
 2. Tell whether two members belong to same set or not
 
+TC :O(4*alpha(n)) n is number of elements in the disjoint set and alpha is the inverse of Ackermann function which is a very slow growing function
 If i find suppose 'c' and then for 'd' and if they belong to same parent/leader then they belong to same set
 
+There is also union by size where it is possible to state the size of the component by checking the size of the parent over here we dont add +1 instead we do size[parent1]+=size[parent2]
 
 Find function to find out the parent/leader of an element
 
@@ -101,6 +106,7 @@ void union(int x,int y,vector<int> &parent)
 
 
 //DSU TEMPLATE FOR UNION AND FIND THROUGH OPTIMISED THAT IS AMMORTISED O(n) and is generally constant only some times it take O(n) to trace the root in the fnd operation
+
     vector<int> parent;
     vector<int> rank;
     int find(int val)

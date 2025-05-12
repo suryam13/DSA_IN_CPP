@@ -47,6 +47,5 @@ BFS is useful in shortest path finding in unweighted graph as we explore all the
 */
  int main()
 {
-    
     return 0;
 }

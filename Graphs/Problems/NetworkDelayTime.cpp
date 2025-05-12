@@ -3,7 +3,6 @@ using namespace std;
 // LC 743
 int networkDelayTime(vector<vector<int>> &times, int n, int k)
 {
-
     // directed graph applying dijkstra's algo
     // k is the src node
 
@@ -65,6 +64,5 @@ int networkDelayTime(vector<vector<int>> &times, int n, int k)
 }
 int main()
 {
-
     return 0;
 }

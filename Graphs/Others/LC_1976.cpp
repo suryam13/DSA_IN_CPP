@@ -22,7 +22,7 @@ int countPaths(int n, vector<vector<int>> &roads)
     priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>>> pq;
     pq.push({0, 0}); // cost,node
     cost[0] = 0;
-    county[0] = 1; // at the starting there is 1 wat that is itself
+    county[0] = 1; // at the starting there is 1 way that is itself
 
     while (!pq.empty())
     {
