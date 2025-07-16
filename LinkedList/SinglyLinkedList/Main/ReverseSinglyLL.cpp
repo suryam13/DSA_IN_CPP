@@ -23,7 +23,7 @@ public:
     }
 };
 
-/*** COVERSION OF LL INTO ARRAY ***/
+/*** CONVERSION OF LL INTO ARRAY ***/
 Node *constructLL(vector<int> &arr)
 {
 
@@ -115,6 +115,54 @@ Node *reverseLL(Node *head)
 
 //         return prev;
 //     }
+
+// 19-5-2025
+/*
+     void reverse(ListNode* head, ListNode* prev,ListNode* &send) {
+
+        if (head->next == NULL)
+        {
+            send=head; //as this is the last node
+            head->next=prev;
+            return;
+        }
+
+        reverse(head->next, head,send);
+        head->next=prev;
+    }
+
+public:
+    ListNode* reverseList(ListNode* head) {
+
+        // //Recursive Approach
+        // ListNode* prev= NULL; //to link the back
+        // ListNode* send; //to store the last node as new head
+
+        // if(head==NULL) return NULL;
+
+        // reverse(head, prev,send);
+
+        // return send;
+
+        //Iterative Aproach
+        ListNode* temp = head;
+        ListNode* dummy = NULL;
+        ListNode* prev= NULL;
+
+
+        while(temp)
+        {
+            dummy=temp->next; //to store the next address
+            temp->next=prev; //pointing to back
+            if(dummy==NULL) break; //break as the temp would be pointing the last ndoe as newHead
+            prev=temp; //update the prev for the next one as current
+            temp=dummy; //moving the temp to next node
+        }
+
+        return temp;
+
+    }
+*/
 int main()
 {
     vector<int> v = {1, 2, 3, 5};

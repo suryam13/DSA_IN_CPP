@@ -39,8 +39,9 @@ public:
             {
                 parent[parent1] = parent2;
             }
-        }
+        }   
     }
+
     vector<int> minimumCost(int n, vector<vector<int>> &edges, vector<vector<int>> &query)
     {
 

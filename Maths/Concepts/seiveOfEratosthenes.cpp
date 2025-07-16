@@ -63,7 +63,7 @@ void divisors(int n)
 Seive of Eratothenes
 
 CODE
-vector<bool> seive(int right)
+    vector<bool> seive(int right)
     {   
         //intially marking all as true
         vector<bool> isPrime(right+1,true);

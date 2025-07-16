@@ -1,0 +1,62 @@
+1.If we want to make a copy of a pointer so that the value doesnt reflect in the original main pointer then we have to make the new node by initialising new ListNode() (deep copy)
+
+2.If we want the same changes should reflect in the main node then we simply copy temp=head (shallow copy)
+
+📘 Shallow Copy
+A shallow copy copies only the reference/pointer, not the actual data.
+
+It means:
+Both variables point to the same memory location.
+If you change one, the other changes too.
+
+eg:
+ListNode* original = new ListNode(1);
+ListNode* shallow = original;
+
+shallow->val = 99;
+cout << original->val;  // 👉 Output: 99 (because they both point to same node)
+
+📘 Deep Copy
+A deep copy creates a completely new copy of the object, with new memory allocation.
+
+It means:
+Changing one object does not affect the other.
+Each object is independent.
+
+eg:
+ListNode* original = new ListNode(1);
+ListNode* deep = new ListNode(original->val);  // New node with same value
+
+deep->val = 99;
+cout << original->val;  // 👉 Output: 1 (original is unchanged)
+
+
+
+3.If we do not pass by reference & in the function then copy is been sent which is pointing to same memory address but in this copy every changes made would be visible in the main like next and val but here we cannot rechange the temp node by creating new Node() or lets suppose if i pass helper(head) and over there is Node* node so inside that function if i do node=temp(any other address) it would not affect the original only the copy node which is inside would be affected.
+
+eg : 
+void helper(ListNode* node) {
+    node->val = 99;               // ✅ Affects original
+    node = new ListNode(5);       // ❌ Only local change
+}
+
+ListNode* head = new ListNode(1);
+helper(head);
+
+// ✅ head->val is now 99 (because node->val = 99)
+// ❌ head is still pointing to original node (not the new one)
+
+4. ListNode* send = NULL;
+   ListNode* send= new ListNode();
+   ✅ Difference between ListNode* send = NULL; and ListNode* send = new ListNode();:
+
+ListNode* send = NULL;
+→ Creates a pointer that does not point to any memory (null pointer).
+→ You cannot access send->val or send->next without a crash.
+
+ListNode* send = new ListNode();
+→ Creates a pointer and allocates memory for a new node.
+→ You can safely access send->val and send->next.
+→ Default values: val = 0, next = nullptr.
+
+🧠 Use new ListNode() when you need an actual node in memory.

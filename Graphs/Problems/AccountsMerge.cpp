@@ -54,23 +54,23 @@ public:
 
         unordered_map<int, vector<string>> finalMapping;
 
-        for (auto &[key, value] : mapy)
-        {
-            int findPar = find(value);
-            finalMapping[findPar].push_back(key);
-        }
+        // for (auto &[key, value] : mapy)
+        // {
+        //     int findPar = find(value);
+        //     finalMapping[findPar].push_back(key);
+        // }
 
-        for (auto &[key, value] : finalMapping)
-        {
-            vector<string> dummy;
-            dummy.push_back(accounts[key][0]);
-            for (auto &str : value)
-            {
-                dummy.push_back(str);
-            }
+        // for (auto &[key, value] : finalMapping)
+        // {
+        //     vector<string> dummy;
+        //     dummy.push_back(accounts[key][0]);
+        //     for (auto &str : value)
+        //     {
+        //         dummy.push_back(str);
+        //     }
 
-            ans.push_back(dummy);
-        }
+        //     ans.push_back(dummy);
+        // }
 
         return ans;
     }

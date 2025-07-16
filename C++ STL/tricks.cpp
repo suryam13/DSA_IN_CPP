@@ -6,10 +6,11 @@ using namespace std;
 //cout<<round(1.234567*100)/100<<endl; // 1.23
 
 
-/*always when working with mod and -veresult comes,make sure to convert into +ve to avoid further miscalcualtions */
+/*always when working with mod and -ve result comes,make sure to convert into +ve to avoid further miscalcualtions */
 //if(ans<0) ans=ans+mod; // to convert negative to positive
 
 /*
+
 U cannot use for each loop in array directly without the size known
 
 this is the correct way to use for each loop in array:
