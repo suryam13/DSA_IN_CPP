@@ -1,0 +1,200 @@
+=>Heap :
+It is a complete binary tree.
+it means that all the levels are complete,possibly except the last level filled from left to right.
+and if even the last level is filled still we can call it as a complete binary tree along with one more type i.e. specifically perfect binary tree.
+
+
+Two types of heap :
+1.Max-Heap - should be a C.B.T and the parent node should be greater than or equal to its child nodes.
+
+2.Min-Heap - should be a C.B.T and the parent node should be less than or equal to its child nodes 
+
+These properties should be followed by each and every node.
+
+
+=> Construction of Heap:
+
+We can do it by having a tree but then we would have to face two challenges:
+1.finding where to insert the node as in which node has 0/1 child and that too also maintaining complete binary tree,would have to perform level order traversal - o(n) T.C.
+2.maintaining the max heap property that is checking whether its parent is greater than equal to or not. o(logN) T.C.
+
+For each insertion:
+O(N)   to find position
+O(logN) to fix heap
+
+Total = N × (N + logN)
+≈ O(N²)
+
+
+To build it efficiently we can take an array and follow a sequential approach,as the insertion in Tree based approach takes o(n) + o(logN) whereas in array it is o(1) + O(logN) for a certain node:
+T.C. is mentioned with respect to insertion time + maintaining the heap property.
+
+if i have a parent then i can calculate left and right child as (2*i)+1 and (2*i)+2 respectively
+eg : for 0 -> 1 and 2 are childrens
+
+if i have a child and want to know its parent then can do (i-1)/2 
+eg : 4 its parent is 1 , 3 its parent is also 1 
+3 being odd is a left child and 4 is a right child 
+note-indexing starts from 0 so left child of 0 is 1 and right is 2.
+
+
+
+
+
+
+=> Implementation of Heap
+refer implementation.cpp
+
+Heapify is the process of restoring the heap property by moving an element up or down the heap. Heapify-up is used after insertion, heapify-down after deletion or during build-heap(efficiently in O(N) when array is provided beforehand).
+
+Heapify Up - 
+Heapify Up is the process of restoring the heap property by moving a node upward toward the root. It is mainly used after inserting a new element into the heap. The newly inserted element is compared with its parent, and if the heap property is violated, the two are swapped. This process continues until the correct position is found or the root is reached. The time complexity of heapify up is O(log n).
+
+Heapify Down
+Heapify Down is the process of restoring the heap property by moving a node downward toward the leaf nodes. It is mainly used after deleting the root element or while building/converting a heap. The node is compared with its children, and if the heap property is violated, it is swapped with the appropriate child (smallest for min heap, largest for max heap). The process continues until the heap property is satisfied or a leaf node is reached. The time complexity of heapify down is O(log n).
+
+
+Insertion of an element in heap :
+For insertion of a single element into the heap we directly add it at the end and then for maintaining the heap property we do heapify up process untill the condition is satisfied.
+
+
+Deletion of an element from heap :
+
+for max-heap the greatest element would be popped.
+In this i have to remove the top element of the tree that is the 0th indexed element in the array.
+
+i have to remove the 0th index element so i would swap it with the last element in the array and do a pop_back so in such a case the max element is been removed from the heap and also the complete binary tree rule is been maintained as we have taken the last element from the tree and placed at the top.
+
+Now just try to maintain the property of heap by checking whether its children is greater or not and continue till it gets satisified
+refer implementation.cpp
+
+
+Time complexity of Heap :
+
+for insertion,we have to just add that in the last index so its O(1),but in order to place that in the correct position we have to check whether the child > parent or not,in worst case we would have to make swaps log(n) times till the top. 
+so - o(logN) for insertion of certain element
+and - o(logN) for deletion of top element
+
+And to insert n elements one by one into the heap it would take O(nlogn)
+
+So summary for this is as follows:
+When we are inserting the elements one-by-one in a heap 
+->we directly push the element at last,we follow heapify up from the bottom and then continue to go up.
+When we are deleting an element from the Heap
+->we follow the process mentioned before,we follow heapify down from the top node and continue to come down.
+
+
+
+
+
+=> Optimised Heap Construction 
+this happens when we have all the array elements before hand and dont wish to insert one by one.
+
+here the things are opposite with respect to the previous methods when we were inserting one by one.
+for heapify-up instead of going from down to up , we start from the top only and continue to go up for every single node in order.
+for heapify-down instead of going from up to down , we start from bottom and continue to go down for every single node in order.
+
+
+
+Option 1 : heapify-up from the first node followed by order for rest of the nodes.(Inefficient)
+T.C : 
+
+nodes at last level are n/2 similiarly moving upwards it becomes n/4,n/8,n/16.
+for last level in worst case it could be logN
+
+so for each level the max that it could go in heapify up process is 
+- N/2*logN + N/4(logN-1) + N/8(logN-2)
+taking NlogN common NlogN(1/2+......some terms which can be ignored as they are constant)
+
+so the overall complexity is O(NlogN)
+
+NOTE : Heapify-up takes O(N log N) because most nodes are leaves and have the maximum distance to the root, so the expensive log N work happens many times.
+In contrast, heapify-down takes O(N) because most nodes are near the leaves and have very small subtree height, so they requ ire only constant work.
+That is why in heapify-down we count steps as 1, 2, 3 (distance to leaf), whereas in heapify-up we count steps in terms of log N (distance to root).So thats the reason why we direclty calculate 1 step or 2 step required to reach down whereas in heapify up we used to calculate in terms of logN.
+
+Option 2 : heapify-down from the last non-leaf node followed by order rest of the nodes.(Efficient)
+T.C :
+As we are starting from the non-leaf node so being at the second last level we have to go 1 step down in worst case similiarly progressing above,
+n
+n/2
+n/4
+n/8
+steps
+n/4 * 1 + n/8 * 2 + n/16 * 3 + ... + log n
+n ( 1/4 + 2/8 + 3/16 + ... )
+so ultimately it would be taking O(N) T.C.
+
+
+These are the approaches used when we have a random array provided and want to convert to certain type of heap
+why other methods fail ?
+
+1. Heapify up from last ❌ Invalid 
+
+           1
+        /     \
+       2       3
+     /   \   /   \
+    4     5  6     7
+
+here lets say i apply heapify-up from last so for 7 it gets swapped with 3,then 7 again gets swapped with 1 and moves at the top okay.
+now the scenario moves to the next node 6 and further but the point is that as we are trying to build max-heap 1 should have been at the last but we have 1 as the parent of 3 that means parent is smaller than the child which is wrong as per definition of max heap and there would be no chance of 1 coming down as when the chance of node with value 1 comes it can only go up and not down
+
+
+2. Heapify down from root ❌ Invalid
+           1
+        /     \
+       2       3
+     /   \   /   \
+    4     5  6     7
+
+over here also same issue while constructing max-heap,in the very first step when 1 is compared with its children,3 goes at the top and then further 7 goes at the second level and eventually at the last node,now there is no chance 7 could come at the top as 3 wont be given a chance to apply the operation as we are onto processing of 2nd position node after first as a result we would have 3 as a parent of 7 which violates the property.
+
+3. Heapify up from start - valid
+✅ O(n log n)
+4. Heapify down from last non-leaf - valid
+✅ BEST O(n)
+
+
+
+
+
+=> HEAP SORT
+
+refer heapSort.cpp
+This is an efficient sorting technique,
+the process is simple we just have to convert the given array to a max-heap using the efficient method discussed before so it would take o(N) to build a max-heap
+now keep popping the top element and store it in a seperate ans vector,popping and again maintaining the heap would take logN so doing it for n nodes would take O(NlogN).
+here we are taking an extra auxillary space O(n) ans to store the final elements in a sorted manner,to avoid it,we can follow a trick mentioned below :
+
+->we are removing the 0th element and swapping it with the last element and then popping it so instead of popping lets pass an extra n parameter and always reduce the size of n by n-1 and would be applying heapify down uptill n only so automatically the elements would be in sorted manner after entire operation i.e in smallest at first and largest at last in an ascending manner.
+
+
+
+
+
+=> PRIORITY QUEUE 
+
+CUSTOM COMPARATOR :
+
+struct Compare {
+    bool operator()(pair<int,int> &a, pair<int,int> &b) {
+        if (a.second == b.second)
+            return a.first > b.first;   // smaller first comes first
+        return a.second < b.second;     // larger second comes first
+    }
+};
+
+priority_queue<pair<int,int>, vector<pair<int,int>>, Compare> pq;
+
+
+over here the logic is reversed as compared to the normal sorting comparator.
+
+in normal sorting comparator,
+int a,int b -> in parameter
+
+true means 'a' pehle aayega,false means 'a' baad mein ya equal aayega,ordering varies
+
+in priority_queue comparator,
+true means mein a baad mein aayega and false means pehle aayega ya fir equal ordereing varies with respect to other criterias mentioned
+
+

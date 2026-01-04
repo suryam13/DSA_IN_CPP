@@ -1,0 +1,9 @@
+SLIDING WINDOW MECHANISM
+
+PATTERN 1-CONSTANT WINDOW
+PATTERN 2-LONGEST SUBARRAY/SUBSTRING
+PATTERN 3-NO OF SUBARRAYS
+
+When its about longest substring ar any kind of that then its not neccessary to apply a loop in the opposing part could be handled with simple else if as in longest substring with at most k distinct characters
+
+Sliding window is all about providing with logic in desired cases

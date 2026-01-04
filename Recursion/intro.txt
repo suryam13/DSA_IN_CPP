@@ -1,0 +1,6 @@
+Recursion : When a function calls itself directly or indirectly
+
+When a solution of a bigger problem depends on solution of smaller problem in this case we can apply recursion over here 
+
+Why do we use loops inside recursion?
+When we dont know the number of choices then we do so and on the other hand if we know the choices which has to be made then we apply simple take and not take approach

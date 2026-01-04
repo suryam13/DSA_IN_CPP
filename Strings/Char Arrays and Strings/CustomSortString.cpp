@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+// LC-791
+
+class Solution
+{
+public:
+    // custom comparator
+
+    static string str;
+    static bool compare(char char1, char char2)
+    {
+        return (str.find(char2) > str.find(char1));
+    }
+    string customSortString(string order, string s)
+    {
+        str = order;
+        sort(s.begin(), s.end(), compare);
+
+        return s;
+    }
+};
+string Solution::str;
+
+int main()
+{
+
+    return 0;
+}
