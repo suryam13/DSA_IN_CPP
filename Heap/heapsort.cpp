@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Heap Sort :
+// T.C. O(NlogN)
+// S.C. O(1)
+// NOTE : the logic of heapify down and perform operation is duplicated i jut merged it so that it becomes easier to understand the workflow
+
 void heapifyDown(int curr, vector<int> &v)
 {
     int n = v.size();
@@ -88,8 +93,3 @@ int main()
 
     return 0;
 }
-
-// Heap Sort :
-// T.C. O(NlogN)
-// S.C. O(1)
-// NOTE : the logic of heapify down and perform operation is duplicated i jut merged it so that it becomes easier to understand the workflow
